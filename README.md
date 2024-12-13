@@ -1,47 +1,116 @@
-# Svelte + Vite
+# Tap the Mole
 
-This template should help get you started developing with Svelte in Vite.
+**Tap the Mole** es una aplicación móvil web progresiva basada en el clásico juego de "Toca al topo". Diseñada para ser interactiva y accesible, la aplicación incluye funcionalidades básicas como selección de nivel, validación de usuario y la capacidad de jugar offline.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## **Características**
 
-## Need an official Svelte framework?
+- 🎮 **Juego interactivo**: Golpea al topo que aparece aleatoriamente para ganar puntos.
+- 🔄 **Selección de niveles**:
+  - **Fácil**: 1000 ms, 10 puntos por topo.
+  - **Medio**: 750 ms, 20 puntos por topo.
+  - **Difícil**: 500 ms, 30 puntos por topo.
+- ✨ **PWA (Progressive Web App)**: Funciona sin conexión tras la primera carga.
+- 🚀 **Desplegado públicamente**: Disponible online para cualquier dispositivo.
+- 📱 **Optimizado para móviles**: Experiencia fluida y responsiva.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+---
 
-## Technical considerations
+## **Requisitos**
 
-**Why use this over SvelteKit?**
+- Node.js >= 16
+- Navegador compatible con aplicaciones web modernas.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+---
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## **Cómo instalar y ejecutar localmente**
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+1. **Clonar el repositorio**:
+  ```bash
+    git clone https://github.com/tu-usuario/bbva-tap-the-mole.git
+    cd bbva-tap-the-mole
+  ```
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+2.	**Instalar dependencias:**
+  ```bash
+    npm install
+  ```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+3.	**Ejecutar en desarrollo:**
 
-**Why include `.vscode/extensions.json`?**
+  ```bash
+    npm run dev
+  ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Abre el navegador en http://localhost:5173.
 
-**Why enable `checkJs` in the JS template?**
+4.	**Construir para producción:**
+  ```bash
+    npm run build
+  ```
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+Los archivos estáticos estarán disponibles en la carpeta dist.
 
-**Why is HMR not preserving my local component state?**
+5.	**Vista previa de producción:**
+  ```bash
+    npm run preview
+  ```
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+---
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+## **Despliegue**
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+El proyecto está configurado para desplegarse automáticamente en GitHub Pages:
+
+1.	**Configura la base en vite.config.js:**
+  ```bash
+    base: '/bbva-tap-the-mole/',
+  ```
+
+2.	**Ejecuta el despliegue:**
+  ```bash
+    npm run deploy
+  ```
+
+3.	La aplicación estará disponible en: https://tu-usuario.github.io/bbva-tap-the-mole/.
+
+---
+
+## **Tests**
+
+Este proyecto incluye pruebas unitarias para las vistas y componentes:
+1.	**Ejecutar pruebas:**
+  ```bash
+    npm run test
+  ```
+
+2.	**Modo watch para pruebas continuas:**
+  ```bash
+    npm run test:watch
+  ```
+
+---
+
+## **Características adicionales**
+
+	•	*Arquitectura basada en Svelte:* Componentes reutilizables y fáciles de mantener.
+	•	*Vite PWA:* Implementación optimizada para Progressive Web Apps.
+	•	*Tests unitarios con Vitest y Testing Library:* Alta cobertura de las funcionalidades clave.
+	•	*Configuración de Preprocesadores:* sass-embedded integrado para estilos avanzados.
+
+---
+
+## **Mejoras implementadas**
+
+	•	*Soporte offline:* Configurado con vite-plugin-pwa.
+	•	*Transiciones animadas:* Experiencia de usuario mejorada.
+	•	*Estructura modular:* Código limpio y claro.
+	•	*Despliegue continuo:* Configurado con gh-pages.
+
+
+---
+
+## **Licencia**
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
