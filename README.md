@@ -28,7 +28,7 @@
 
 1. **Clonar el repositorio**:
   ```bash
-    git clone https://github.com/tu-usuario/bbva-tap-the-mole.git
+    git clone https://github.com/vicaschez/bbva-tap-the-mole.git
     cd bbva-tap-the-mole
   ```
 
@@ -73,7 +73,7 @@ El proyecto está configurado para desplegarse automáticamente en GitHub Pages:
     npm run deploy
   ```
 
-3.	La aplicación estará disponible en: https://tu-usuario.github.io/bbva-tap-the-mole/.
+3.	La aplicación estará disponible en: https://vicaschez.github.io/bbva-tap-the-mole/.
 
 ---
 
