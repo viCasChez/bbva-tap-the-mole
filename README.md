@@ -14,6 +14,10 @@
 - ✨ **PWA (Progressive Web App)**: Funciona sin conexión tras la primera carga.
 - 🚀 **Desplegado públicamente**: Disponible online para cualquier dispositivo.
 - 📱 **Optimizado para móviles**: Experiencia fluida y responsiva.
+- 🧩 **Componentes reutilizables**: Basados en Svelte y LitElement para un diseño modular.
+- 🌐 **Soporte offline**: Configurado con `vite-plugin-pwa` para acceso sin conexión.
+- 🛠️ **Despliegue continuo**: Configurado con `gh-pages` para actualizaciones rápidas.
+- 🧪 **Cobertura de test**: Tests unitarios con Vitest y Testing Library.
 
 ---
 
@@ -89,25 +93,6 @@ Este proyecto incluye pruebas unitarias para las vistas y componentes:
   ```bash
     npm run test:watch
   ```
-
----
-
-## **Características adicionales**
-
-	•	*Arquitectura basada en Svelte:* Componentes reutilizables y fáciles de mantener.
-	•	*Vite PWA:* Implementación optimizada para Progressive Web Apps.
-	•	*Tests unitarios con Vitest y Testing Library:* Alta cobertura de las funcionalidades clave.
-	•	*Configuración de Preprocesadores:* sass-embedded integrado para estilos avanzados.
-
----
-
-## **Mejoras implementadas**
-
-	•	*Soporte offline:* Configurado con vite-plugin-pwa.
-	•	*Transiciones animadas:* Experiencia de usuario mejorada.
-	•	*Estructura modular:* Código limpio y claro.
-	•	*Despliegue continuo:* Configurado con gh-pages.
-
 
 ---
 
