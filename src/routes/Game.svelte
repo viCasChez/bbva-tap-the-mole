@@ -1,6 +1,6 @@
 <script>
   import { get } from 'svelte/store';
-  import { name, points, level, playGame, incrementPoints, setLevelSelected, toggleGame } from '../store';
+  import { name, points, level, playGame, incrementPoints, setLevelSelected, toggleGame, resetGame } from '../store';
   import '../components/Game.js';
   import '../components/Levels.js';
   import '../components/Buttons.js';
@@ -10,6 +10,7 @@
 
   function gameExit() {
     navigate('/home'); // Navega a la home
+    resetGame(); // 
   }
 
   function updatePoints() {

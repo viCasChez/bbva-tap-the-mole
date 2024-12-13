@@ -40,7 +40,7 @@ export class HomeForm extends LitElement {
   render() {
     return html`
       <h1>Tap the Mole</h1>
-      <img src="/img/mole.webp" alt="Tap the Mole" />
+      <img src="./img/mole.webp" alt="Tap the Mole" />
       <form @submit="${(e) => e.preventDefault()}">
         <label for="name">Name</label>
         <input

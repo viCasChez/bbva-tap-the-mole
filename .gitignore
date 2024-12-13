@@ -3,6 +3,3 @@ node_modules/
 
 # Ignorar archivos de construcción
 dist/
-
-# Ignorar archivos específicos
-.env
