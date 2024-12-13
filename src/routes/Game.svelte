@@ -1,4 +1,5 @@
 <script>
+  import { BASE_URL } from '../config.js';
   import { get } from 'svelte/store';
   import { name, points, level, playGame, incrementPoints, setLevelSelected, toggleGame, resetGame } from '../store';
   import '../components/Game.js';
@@ -9,7 +10,7 @@
   export let navigate;
 
   function gameExit() {
-    navigate('/home'); // Navega a la home
+    navigate(`${BASE_URL}/home`); // Navega a la home
     resetGame(); // 
   }
 
