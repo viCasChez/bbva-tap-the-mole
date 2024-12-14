@@ -13,6 +13,7 @@ class Game extends LitElement {
     this.playGame = false;
     this.secondsWait = 500;
     this.holeSelected = -1;
+    this.holeStates = Array(9).fill(null);
   }
 
   eventUpdatePoints() {
@@ -20,7 +21,12 @@ class Game extends LitElement {
       bubbles: true,
       composed: true,
     });
-    this.dispatchEvent(event); // Emite el evento 'update-points' para notificar el cambio
+    this.dispatchEvent(event);
+    this.holeStates[this.holeSelected] = 'success';
+    this.holeSelected = -1;
+    if (navigator.vibrate) {
+      navigator.vibrate(100); // Vibrar durante 100 ms
+    }
   }
 
   startGame() {
@@ -42,7 +48,14 @@ class Game extends LitElement {
   }
 
   randomShowMole() {
-    this.holeSelected = this.getRandomMole();
+    if (this.playGame) {
+      this.holeStates[this.holeSelected] = 'fail';
+      this.holeSelected = this.getRandomMole();
+    }
+  }
+
+  handleAnimationEnd() {
+    this.holeStates = Array(9).fill(null);
   }
 
   render() {
@@ -50,7 +63,11 @@ class Game extends LitElement {
       <div class="grid grid-hole">
         ${Array.from({ length: 9 }).map(
           (_, index) =>
-            html`<div class="hole ${index === this.holeSelected ? 'selected' : ''}" id="hole-${index}">
+            html`<div
+                  class="hole ${index === this.holeSelected ? 'selected' : ''} ${this.holeStates[index]}"
+                  id="hole-${index}"
+                  @animationend="${this.handleAnimationEnd}"
+                >
                   <mole-element @click="${this.eventUpdatePoints}"></mole-element>
                 </div>`
         )}
@@ -93,6 +110,17 @@ class Game extends LitElement {
       border-radius: 50%;
       box-shadow: 2px 2px 6px 2px #999;
       background-color: #a9a9a9;
+      transition: background-color 500ms ease;
+    }
+
+    .hole.success {
+      background-color: #9acd32;
+      animation: success-animation 1000ms ease forwards;
+    }
+
+    .hole.fail {
+      background-color: #cd5c5c;
+      animation: fail-animation 1000ms ease forwards;
     }
 
     mole-element {
@@ -103,6 +131,23 @@ class Game extends LitElement {
       display: block;
     }
   
+    @keyframes success-animation {
+      0% {
+        background-color: #9acd32;
+      }
+      100% {
+        background-color: #a9a9a9;
+      }
+    }
+
+    @keyframes fail-animation {
+      0% {
+        background-color: #cd5c5c;
+      }
+      100% {
+        background-color: #a9a9a9;
+      }
+    }
   `;
 }
 
