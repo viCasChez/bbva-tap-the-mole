@@ -31,7 +31,7 @@ class Game extends LitElement {
 
   startGame() {
     this.interval ? clearInterval(this.interval) : this.randomShowMole();
-    $:{this.interval = setInterval(this.randomShowMole.bind(this), this.secondsWait)};
+    this.interval = setInterval(this.randomShowMole.bind(this), this.secondsWait);
   }
 
   stopGame() {
@@ -56,9 +56,11 @@ class Game extends LitElement {
 
   handleAnimationEnd() {
     this.holeStates = Array(9).fill(null);
+    this.requestUpdate();
   }
 
   render() {
+    console.log(`👽 [vi... ${Date.now()}]: texto`, this.secondsWait);
     return html`
       <div class="grid grid-hole">
         ${Array.from({ length: 9 }).map(
