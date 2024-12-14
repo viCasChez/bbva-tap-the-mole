@@ -60,7 +60,6 @@ class Game extends LitElement {
   }
 
   render() {
-    console.log(`👽 [vi... ${Date.now()}]: texto`, this.secondsWait);
     return html`
       <div class="grid grid-hole">
         ${Array.from({ length: 9 }).map(
