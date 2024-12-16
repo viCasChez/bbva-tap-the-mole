@@ -1,6 +1,9 @@
 import { LitElement, html, css } from 'lit';
+import styles from '../styles/levels.css';
 
 class LevelsElement extends LitElement {
+  static styles = css([styles]);
+
   static properties = {
     levelSelected: { type: Number },
     buttonLevels: { type: Array },
@@ -40,52 +43,6 @@ class LevelsElement extends LitElement {
         </div>
     `;
   }
-
-  static styles = css`
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      gap: 30px;
-      justify-content: center;
-      margin: 20px 0;
-    }
-
-    button {
-      padding: 10px 15px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .grid button {
-      opacity: 0.5;
-    }
-
-    button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    button.low {
-      background-color: #9acd32;
-      border: 3px solid #9acd32;
-    }
-    button.medium {
-      background-color: #ffa500;
-      border: 3px solid #ffa500;
-    }
-    button.high {
-      background-color: #cd5c5c;
-      border: 3px solid #cd5c5c;
-    }
-
-    .grid button:hover, button.selected {
-      border: 3px solid #000;
-      opacity: 1;
-    }
-  `;
 
 }
 

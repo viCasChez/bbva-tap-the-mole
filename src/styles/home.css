@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  text-align: center;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+img {
+  width: 250px;
+}
+
+label { display: block; }
+
+label, input, button { 
+  margin: 16px auto 0;
+}
+
+input { padding: 6px; }
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+p {
+  color: red;
+  font-size: .8rem;
+  margin-top: 8px;
+}
+

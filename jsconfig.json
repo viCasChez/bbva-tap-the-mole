@@ -33,6 +33,5 @@
     "src/**/*.js",
     "src/**/*.svelte",
     "test/Home.test.js",
-    "test/Home.test.js"
   ]
 }

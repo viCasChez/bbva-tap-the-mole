@@ -2,10 +2,10 @@
   import { BASE_URL } from '../config.js';
   import { get } from 'svelte/store';
   import { name, points, level, playGame, incrementPoints, setLevelSelected, toggleGame, resetGame } from '../store';
+  import '../components/Header.js';
   import '../components/Game.js';
   import '../components/Levels.js';
   import '../components/Buttons.js';
-  import '../styles/game.css';
 
   export let navigate;
 
@@ -38,9 +38,7 @@
 </script>
 
 <div class="game">
-  <h1>Welcome, {$name}!!!</h1>
-  <p>Points: <span>{$points}</span></p>
-
+  <header-game name={$name} points={$points}></header-game>
   <levels-element buttonLevels={buttonLevels} levelSelected={$level} on:update-level={updateLevel}></levels-element>
   <game-view playGame={$playGame} secondsWait={secondsWait} on:update-points={updatePoints} on:update-game={updateGame}></game-view>
   <buttons-element playGame={$playGame} on:game-exit={gameExit} on:update-game={updateGame}></buttons-element>

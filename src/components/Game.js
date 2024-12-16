@@ -1,7 +1,10 @@
 import { LitElement, html, css } from 'lit';
+import styles from '../styles/game.css';
 import './Mole.js';
 
 class Game extends LitElement {
+  static styles = css([styles]);
+
   static properties = {
     playGame: { type: Boolean },
     secondsWait: { type: Number },
@@ -85,71 +88,6 @@ class Game extends LitElement {
     }
   }
 
-  static styles = css`
-    :host {
-      display: block;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      gap: 30px;
-      justify-content: center;
-      margin: 20px 0;
-    }
-
-    .grid-hole {
-      margin: 80px 0;
-    }
-
-    .hole {
-      position: relative;
-      width: calc(100% - 20px);
-      height: 36px;
-      border: 10px solid #000;
-      border-radius: 50%;
-      box-shadow: 2px 2px 6px 2px #999;
-      background-color: #a9a9a9;
-      transition: background-color 500ms ease;
-    }
-
-    .hole.success {
-      background-color: #9acd32;
-      animation: success-animation 1000ms ease forwards;
-    }
-
-    .hole.fail {
-      background-color: #cd5c5c;
-      animation: fail-animation 1000ms ease forwards;
-    }
-
-    mole-element {
-      display: none;
-    }
-
-    .hole.selected mole-element {
-      display: block;
-    }
-  
-    @keyframes success-animation {
-      0% {
-        background-color: #9acd32;
-      }
-      100% {
-        background-color: #a9a9a9;
-      }
-    }
-
-    @keyframes fail-animation {
-      0% {
-        background-color: #cd5c5c;
-      }
-      100% {
-        background-color: #a9a9a9;
-      }
-    }
-  `;
 }
 
 customElements.define('game-view', Game);

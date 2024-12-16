@@ -1,6 +1,9 @@
 import { LitElement, html, css } from 'lit';
+import styles from '../styles/buttons.css';
 
 class ButtonsElement extends LitElement {
+  static styles = css([styles]);
+
   static properties = {
     playGame: { type: Boolean },
   }
@@ -36,34 +39,6 @@ class ButtonsElement extends LitElement {
       <button type="button" class="btn-home" @click="${this.goToHome}">Exit</button>
     `;
   }
-
-  static styles = css`
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      gap: 30px;
-      justify-content: center;
-      margin: 20px 0;
-    }
-
-    button {
-      padding: 10px 15px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button.btn-home, button.btn-stop-play {
-      width: 90px;
-    }
-
-    button.btn-home {
-      background-color: #cd5c5c;
-      margin-left: 16px;
-    }
-  `;
 
 }
 
